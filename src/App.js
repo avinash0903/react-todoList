@@ -18,7 +18,6 @@ const App = () => {
     setItem('');
   };
   const deleteItem = (id) => {
-    console.log('deleted');
     setData((val) => {
       return val.filter((pos, index) => {
         return id !== index;
