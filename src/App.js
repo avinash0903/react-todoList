@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './style.css';
 
+import ToDoList from './ToDoList';
+
 const App = () => {
   const [item, setItem] = useState('');
   const [data, setData] = useState([]);
@@ -14,6 +16,14 @@ const App = () => {
       return [...val, item];
     });
     setItem('');
+  };
+  const deleteItem = (id) => {
+    console.log('deleted');
+    setData((val) => {
+      return val.filter((pos, index) => {
+        return id !== index;
+      });
+    });
   };
 
   return (
@@ -30,8 +40,15 @@ const App = () => {
           />
           <button onClick={displayData}>+</button>
           <ol>
-            {data.map((itemval) => {
-              return <li>{itemval}</li>;
+            {data.map((itemval, index) => {
+              return (
+                <ToDoList
+                  key={index}
+                  id={index}
+                  onSelect={deleteItem}
+                  text={itemval}
+                />
+              );
             })}
           </ol>
         </div>

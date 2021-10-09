@@ -74,3 +74,25 @@ ol li {
   color: #8566aa;
   text-transform: capitalize;
 }
+
+.inline {
+  display: flex;
+  text-align: left;
+  align-items: center;
+}
+#remove {
+  min-height: 16px;
+  width: 22px;
+  border-radius: 50%;
+  border-color: transparent;
+  background-color: #8566aa;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  margin-right: 10px;
+  box-shadow: 5px 5px 15px -5px rgb(0 0 0 / 30%);
+}
+#remove:hover {
+  background-color: #e90808;
+}
